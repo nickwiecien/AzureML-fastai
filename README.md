@@ -48,19 +48,18 @@ All of the notebook samples should now be cloned into the fastai folder and read
 1) Use the terminal window to create a new environment. For example, the code below creates fastaienv and activate the environment:
 
 ```shell
-conda create -y --name fastaienv
+sudo apt-get install graphviz
+python_version=3.7
+conda create -y --name fastaienv python=$python_version
 conda activate fastaienv
 ```
 
-2) Install fastai, nbdev, pip and ipykernel package to the new environment and create a kernel for that conda env:
+2) Install required packages, including fastbook, to the new environment and create a kernel for that conda env:
 ```shell
-conda install -y pip
-conda install -y ipykernel
-conda install -y -c fastai -c pytorch fastai
-conda install -y -c fastai fastbook
-conda install -y -c fastai nbdev
+pip install -r requirements.txt
+pip install -Uqq fastbook
 ```
-If you don't already have fastai, then you have to wait for the libraries and dependencies to install. Wait up to 10 mins for this to complete and continue to the next step.
+Wait up to 10 mins for this to complete and continue to the next step.
 
 3) Create a kernel for that conda env:
 ```shell
